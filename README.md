@@ -38,6 +38,20 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `created_at`) VALUES
+(1,	'admin',	'$2y$10$UldMemPvh.gMzJtFF1KDMenzprTpGB0No.IhGdBBUEPEO3iRkaGd6',	'admin@qq.com',	'2025-02-25 20:53:21');
+
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `description` text,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- 运行之前对话中提供的完整SQL表结构
 ```
 
@@ -61,7 +75,7 @@ $pass = 'your_db_password';
 ### 访问方式
 - **前台地址**: `http://your-domain.com/index.php`
 - **后台地址**: `http://your-domain.com/admin.php`
-  - 管理员账号: `admin` / `admin123` (请在生产环境中修改)
+  - 管理员账号: `admin` / `123456` (请在生产环境中修改)
 
 ## 📁 项目结构
 ```
@@ -99,4 +113,3 @@ $pass = 'your_db_password';
 
 ## 📜 开源协议
 [MIT License](LICENSE) 开源，保留署名权利。可用于学习/二次开发，禁止直接用于商业盈利项目。
-```
